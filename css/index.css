@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+.navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background-color: #444;
+  margin-left: auto;
+}
+
+.navbar ul li {
+  position: relative;
+  padding: 0 30px;
+  height: 100%;
+  font-size: 2em;
+  color: #fff;
+}
+
+.navbar ul li:hover {
+  background-color: #515151;
+  cursor: pointer;
+}
+
+.navbar ul li:hover > .draw {
+  max-height: 200px;
+}
+
+.navbar ul li:hover > .scale-y {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.navbar ul li:hover > .scale-x {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.navbar ul li ul {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 100px;
+  left: 0;
+  overflow: hidden;
+}
+
+.navbar ul li ul.draw {
+  max-height: 0;
+  -webkit-transition: max-height 400ms;
+  transition: max-height 400ms;
+}
+
+.navbar ul li ul.scale-y {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+}
+
+.navbar ul li ul.scale-x {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+}
+
+.navbar ul li ul li {
+  padding: 10px;
+  font-size: 1em;
+}
+
+.navbar > ul {
+  height: 100px;
+}
+
+.navbar > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=index.css.map */

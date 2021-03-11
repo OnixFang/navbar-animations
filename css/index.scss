@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+.navbar {
+  // General stile for all elements
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #444;
+    margin-left: auto;
+
+    li {
+      position: relative;
+      padding: 0 30px;
+      height: 100%;
+      font-size: 2em;
+      color: #fff;
+
+      &:hover {
+        background-color: lighten(#444, 5%);
+        cursor: pointer;
+
+        > .draw {
+          max-height: 200px;
+        }
+
+        > .scale-y {
+          transform: scaleY(1);
+        }
+
+        > .scale-x {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+
+      ul {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 100px;
+        left: 0;
+        overflow: hidden;
+
+        &.draw {
+          max-height: 0;
+          transition: max-height 400ms;
+        }
+
+        &.scale-y {
+          transform: scaleY(0);
+          transform-origin: top;
+          transition: transform 400ms;
+        }
+
+        &.scale-x {
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 400ms;
+        }
+
+        li {
+          padding: 10px;
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+  // First level list
+  > ul {
+    height: 100px;
+
+    > li {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
